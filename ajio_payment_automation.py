@@ -1,7 +1,7 @@
 '''
 This code automates payment journey for a specific product on Ajio website.
 It starts with adding the product to the bag, then logging in to the site, and proceeding for payment.
-Payment is done through Paytm wallet which takes debit/credit card information and an OTP.
+Payment is done through a wallet which takes debit/credit card information and an OTP.
 
 '''
 
@@ -91,13 +91,13 @@ proceed_payment = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div[1
 driver.execute_script("arguments[0].click();", proceed_payment)
 time.sleep(5)
 
-#selecting paytm wallet
+#selecting wallet
 wallet = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div[1]/div[3]/div[2]/div[1]/div[3]/div").click()
 time.sleep(2)
 
 driver.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 time.sleep(2)
-paytm = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div").click()
+wallet = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div").click()
 time.sleep(2)
 pay = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div[1]/div[3]/div[2]/div[2]/div/div/div[2]/form/div/button").click()
 time.sleep(2)
